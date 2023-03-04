@@ -8,9 +8,10 @@ import java.util.InputMismatchException;
 public class Driver{
 	
 	public static void main(String[] args) throws IOException{
+		String file = "Movie Database/db.txt";
 		keyboardinput in=new keyboardinput();
-		database da=new database("db.txt");
-		filewrite fw=new filewrite("db.txt");
+		database da=new database(file);
+		filewrite fw=new filewrite(file);
 		
 		pl("Welcome to the ultimate movie database!\n");
 		String s="";
@@ -78,8 +79,8 @@ public class Driver{
 				fw.writeLine(newLine);
 				pl("Entry successfully added");
 				fw.saveFile();
-				da=new database("db.txt");
-				fw=new filewrite("db.txt");
+				da=new database(file);
+				fw=new filewrite(file);
 				i=0;
 				break;
 			case "actor":
